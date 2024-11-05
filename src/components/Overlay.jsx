@@ -1,5 +1,9 @@
 import React from "react";
-import {AiOutlineHighlight, AiOutlineShopping} from "react-icons/ai";
+import {
+  AiOutlineArrowLeft,
+  AiOutlineHighlight,
+  AiOutlineShopping,
+} from "react-icons/ai";
 
 export const Overlay = () => {
   // return <Intro />;
@@ -50,9 +54,12 @@ const Customize = () => {
     "#ef674d",
     "#353934",
   ];
+
+  const decals = ["react", "three", "blender"];
+
   return (
     <div className="fixed inset-0 p-4">
-      <div className="flex gap-4 absolute bottom-4 left-1/2 -translate-x-1/2">
+      <div className="flex flex-col gap-4 absolute top-1/2 -translate-y-1/2 right-4">
         {colors.map((color) => (
           <div
             key={color}
@@ -61,6 +68,18 @@ const Customize = () => {
           ></div>
         ))}
       </div>
+      <div className="flex gap-4 absolute top-1/2 -translate-y-1/2 left-4 flex-col">
+        {decals.map((decal) => (
+          <div key={decal} className="w-16 h-16">
+            <img src={`/${decal}-icon.png`} alt={decal} />
+          </div>
+        ))}
+      </div>
+
+      <button className="bg-black text-white flex items-center gap-2 px-4 py-2 rounded-full absolute top-4 left-4">
+        GO BACK
+        <AiOutlineArrowLeft size="1.3rem" />
+      </button>
     </div>
   );
 };
