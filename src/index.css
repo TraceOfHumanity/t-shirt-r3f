@@ -19,3 +19,18 @@ body,
 canvas {
   touch-action: none;
 }
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+
+  & > header {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+  }
+}

@@ -1,10 +1,12 @@
 import {CanvasR3F} from "./components/Canvas";
+import { Overlay } from "./components/Overlay";
 
 function App() {
   return (
-    <div id="main">
+    <>
       <CanvasR3F />
-    </div>
+      <Overlay />
+    </>
   );
 }
 

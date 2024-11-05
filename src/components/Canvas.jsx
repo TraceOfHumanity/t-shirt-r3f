@@ -5,7 +5,7 @@ import {Center, Environment, OrbitControls} from "@react-three/drei";
 import {Backdrop} from "./Backdrop";
 import {CameraRig} from "./CameraRig";
 
-export const CanvasR3F = ({position = [-1, 0, 2.5], fov = 25}) => {
+export const CanvasR3F = ({position = [0, 0, 2.5], fov = 25}) => {
   return (
     <Canvas
       eventSource={document.getElementById("root")}
@@ -21,7 +21,7 @@ export const CanvasR3F = ({position = [-1, 0, 2.5], fov = 25}) => {
           <Backdrop />
         </Center>
       </CameraRig>
-      <OrbitControls />
+      {/* <OrbitControls /> */}
     </Canvas>
   );
 };
