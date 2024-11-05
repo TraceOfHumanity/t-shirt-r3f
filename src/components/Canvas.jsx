@@ -8,6 +8,7 @@ import {CameraRig} from "./CameraRig";
 export const CanvasR3F = ({position = [0, 0, 2.5], fov = 25}) => {
   return (
     <Canvas
+      gl={{preserveDrawingBuffer: true}}
       eventSource={document.getElementById("root")}
       eventPrefix="client"
       camera={{position, fov}}

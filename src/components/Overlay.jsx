@@ -77,7 +77,11 @@ const Customize = () => {
       </div>
       <div className="flex gap-4 absolute top-1/2 -translate-y-1/2 left-4 flex-col">
         {decals.map((decal) => (
-          <div key={decal} className="w-16 h-16">
+          <div
+            key={decal}
+            className="w-16 h-16"
+            onClick={() => (state.decal = decal)}
+          >
             <img src={`/${decal}-icon.png`} alt={decal} />
           </div>
         ))}
