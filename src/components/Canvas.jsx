@@ -13,8 +13,8 @@ export const CanvasR3F = ({position = [0, 0, 2.5], fov = 25}) => {
       camera={{position, fov}}
       shadows
     >
-      <Environment preset="city" />
       <ambientLight intensity={0.5} />
+      <Environment preset="city" />
       <CameraRig>
         <Center>
           <Shirt />
