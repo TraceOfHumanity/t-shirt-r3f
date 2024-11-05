@@ -42,3 +42,4 @@ export const Shirt = (props) => {
 };
 
 useGLTF.preload("/tshirt.glb");
+["/react-icon.png", "/three-icon.png", "/blender-icon.png"].forEach(useTexture.preload)
