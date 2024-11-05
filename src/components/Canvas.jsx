@@ -2,7 +2,8 @@ import React from "react";
 import {Canvas} from "@react-three/fiber";
 import {Shirt} from "./Shirt";
 import {Center, Environment, OrbitControls} from "@react-three/drei";
-import { Backdrop } from "./Backdrop";
+import {Backdrop} from "./Backdrop";
+import {CameraRig} from "./CameraRig";
 
 export const CanvasR3F = ({position = [-1, 0, 2.5], fov = 25}) => {
   return (
@@ -10,13 +11,16 @@ export const CanvasR3F = ({position = [-1, 0, 2.5], fov = 25}) => {
       eventSource={document.getElementById("root")}
       eventPrefix="client"
       camera={{position, fov}}
+      shadows
     >
       <Environment preset="city" />
       <ambientLight intensity={0.5} />
-      <Center>
-        <Shirt />
-        <Backdrop />
-      </Center>
+      <CameraRig>
+        <Center>
+          <Shirt />
+          <Backdrop />
+        </Center>
+      </CameraRig>
       <OrbitControls />
     </Canvas>
   );

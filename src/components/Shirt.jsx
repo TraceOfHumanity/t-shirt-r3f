@@ -4,7 +4,7 @@ import React from "react";
 export const Shirt = (props) => {
   const {nodes, materials} = useGLTF("/tshirt.glb");
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[0, -0.1, 0]}>
       <mesh
         castShadow
         receiveShadow
