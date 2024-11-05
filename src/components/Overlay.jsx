@@ -5,9 +5,12 @@ import {
   AiOutlineShopping,
 } from "react-icons/ai";
 
+import {useSnapshot} from "valtio";
+import {state} from "../storage";
+
 export const Overlay = () => {
-  // return <Intro />;
-  return <Customize />;
+  const snap = useSnapshot(state);
+  return snap.intro ? <Intro /> : <Customize />;
 };
 
 const Intro = () => {
@@ -33,7 +36,10 @@ const Intro = () => {
                 <strong>Unleash your imagination</strong> and define your own
                 style.
               </p>
-              <button className="mt-8 bg-black flex items-center gap-2 px-4 py-2 rounded-full">
+              <button
+                className="mt-8 bg-black flex items-center gap-2 px-4 py-2 rounded-full"
+                onClick={() => (state.intro = false)}
+              >
                 CUSTOMIZE IT
                 <AiOutlineHighlight size="1.3rem" />
               </button>
@@ -65,6 +71,7 @@ const Customize = () => {
             key={color}
             className="w-16 h-16 rounded-full border-2 border-white"
             style={{backgroundColor: color}}
+            onClick={() => (state.color = color)}
           ></div>
         ))}
       </div>
@@ -76,7 +83,11 @@ const Customize = () => {
         ))}
       </div>
 
-      <button className="bg-black text-white flex items-center gap-2 px-4 py-2 rounded-full absolute top-4 left-4">
+      <button
+        className=" text-white flex items-center gap-2 px-4 py-2 rounded-full absolute top-4 left-4"
+        onClick={() => (state.intro = true)}
+        style={{backgroundColor: state.color}}
+      >
         GO BACK
         <AiOutlineArrowLeft size="1.3rem" />
       </button>
