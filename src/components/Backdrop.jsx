@@ -11,7 +11,7 @@ export const Backdrop = () => {
       shadows.current.getMesh().material.color,
       state.color,
       0.25,
-      delta
+      delta / 2
     );
   });
   return (
