@@ -70,7 +70,7 @@ const Customize = () => {
         {colors.map((color) => (
           <div
             key={color}
-            className="w-16 h-16 rounded-full border-2 border-white"
+            className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-white"
             style={{backgroundColor: color}}
             onClick={() => (state.color = color)}
           ></div>
@@ -80,7 +80,7 @@ const Customize = () => {
         {decals.map((decal) => (
           <div
             key={decal}
-            className="w-16 h-16 bg-white rounded-full flex items-center justify-center p-1 bg-opacity-15"
+            className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center p-1 bg-opacity-15"
             onClick={() => (state.decal = decal)}
           >
             <img src={`/${decal}-icon.png`} alt={decal} />
