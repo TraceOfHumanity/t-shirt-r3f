@@ -1,8 +1,7 @@
 import React from "react";
 import {Canvas} from "@react-three/fiber";
 import {Shirt} from "./Shirt";
-import {Center, Environment, OrbitControls} from "@react-three/drei";
-import {Backdrop} from "./Backdrop";
+import {Center, Environment} from "@react-three/drei";
 import {CameraRig} from "./CameraRig";
 
 export const CanvasR3F = ({position = [0, 0, 2.5], fov = 25}) => {
@@ -19,7 +18,7 @@ export const CanvasR3F = ({position = [0, 0, 2.5], fov = 25}) => {
       <CameraRig>
         <Center>
           <Shirt />
-          <Backdrop />
+          {/* <Backdrop /> */}
         </Center>
       </CameraRig>
       {/* <OrbitControls /> */}
